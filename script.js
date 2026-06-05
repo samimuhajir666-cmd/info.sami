@@ -3,20 +3,50 @@ function askAI() {
     let answerDiv = document.getElementById("answer");
     
     if (!question.trim()) {
-        answerDiv.innerText = "💬 Ask me anything about Sami — skills, projects, experience, learning, or background.";
+        answerDiv.innerText = "💬 Ask me anything about Sami — skills, projects, experience, earning potential, or achievements.";
         return;
     }
     
     let q = question.toLowerCase();
     let reply = "";
     
-    // ==================== SKILLS (10+ ways to ask) ====================
-    if (q.includes("skill") || q.includes("know") || q.includes("can") || q.includes("able") || 
+    // ==================== EARNING POTENTIAL (NEW) ====================
+    if (q.includes("earn") || q.includes("salary") || q.includes("money") || q.includes("income") ||
+        q.includes("paid") || q.includes("rate") || q.includes("how much") || q.includes("kama") ||
+        q.includes("kitna") || q.includes("pesa") || q.includes("worth")) {
+        
+        reply = "💰 Sami's Earning Potential:\n\n" +
+                "• AI Intern (current): Market rate ₹15k-25k/month\n" +
+                "• Junior AI Engineer (next role): ₹30k-50k/month\n" +
+                "• Freelance AI Projects: ₹20k-80k per project\n" +
+                "• Full-time AI Engineer (1 year exp): ₹4-8 LPA\n\n" +
+                "⭐ Skills that pay: RAG, AI Agents, Chatbots, LLM Integration\n" +
+                "🔥 Sami is open for remote AI roles and freelance work!";
+    }
+    
+    // ==================== ACHIEVEMENTS / RESULTS (NEW) ====================
+    else if (q.includes("kar kia") || q.includes("results") || q.includes("achieved") || 
+             q.includes("accomplished") || q.includes("kia kara") || q.includes("kya hasil") ||
+             q.includes("what did he achieve") || q.includes("outcome") || q.includes("success") ||
+             q.includes("itna sab kark") || q.includes("kya banaya") || q.includes("delivered")) {
+        
+        reply = "🏆 What Sami Achieved After All This:\n\n" +
+                "✅ 6 Complete AI Projects (Real clients + Personal)\n" +
+                "✅ 4+ Months AI Internship Experience\n" +
+                "✅ Built Production-Ready Chatbots (Al Shifa, Siddique Brothers)\n" +
+                "✅ Mastered RAG, AI Agents, LangChain, Groq API\n" +
+                "✅ Deployed Live Portfolio: samiai.netlify.app\n" +
+                "✅ From Zero to AI Engineer — in just 4 months!\n\n" +
+                "🎯 Current Goal: Fine-tuning LLMs & Landing Junior AI Engineer Role\n" +
+                "💡 Next: Earning ₹4-8 LPA within 1 year";
+    }
+    
+    // ==================== SKILLS ====================
+    else if (q.includes("skill") || q.includes("know") || q.includes("can") || q.includes("able") || 
         q.includes("python") || q.includes("langchain") || q.includes("rag") || q.includes("agent") ||
         q.includes("chatbot") || q.includes("html") || q.includes("css") || q.includes("javascript") ||
         q.includes("groq") || q.includes("numpy") || q.includes("pandas") || q.includes("node") ||
-        q.includes("technology") || q.includes("tech stack") || q.includes("framework") ||
-        q.includes("what can he do") || q.includes("expert") || q.includes("proficient")) {
+        q.includes("technology") || q.includes("tech stack") || q.includes("framework")) {
         
         reply = "✅ Sami's Technical Skills:\n\n" +
                 "🐍 Python | LangChain | LangGraph\n" +
@@ -31,12 +61,12 @@ function askAI() {
                 "🗄️ ChromaDB (Vector Database)";
     }
     
-    // ==================== PROJECTS (real ones) ====================
+    // ==================== PROJECTS ====================
     else if (q.includes("project") || q.includes("build") || q.includes("made") || q.includes("create") ||
-             q.includes("developed") || q.includes("work") || q.includes("portfolio") ||
-             q.includes("what did he make") || q.includes("showcase") || q.includes("bot") ||
-             q.includes("al shifa") || q.includes("siddique") || q.includes("urdu") ||
-             q.includes("healthcare") || q.includes("career advisor") || q.includes("agent")) {
+             q.includes("developed") || q.includes("portfolio") || q.includes("what did he make") ||
+             q.includes("showcase") || q.includes("bot") || q.includes("al shifa") || 
+             q.includes("siddique") || q.includes("urdu") || q.includes("healthcare") || 
+             q.includes("career advisor") || q.includes("agent")) {
         
         reply = "🚀 Sami's Projects (6 complete):\n\n" +
                 "1. 🤖 AI Career Advisor — Live on this website!\n" +
@@ -48,10 +78,10 @@ function askAI() {
                 "🔗 All projects on GitHub: github.com/samimuhajir666-cmd";
     }
     
-    // ==================== EXPERIENCE / INTERNSHIP ====================
+    // ==================== EXPERIENCE ====================
     else if (q.includes("experience") || q.includes("intern") || q.includes("job") || q.includes("company") ||
              q.includes("worked") || q.includes("professional") || q.includes("career") ||
-             q.includes("where did he work") || q.includes("background")) {
+             q.includes("where did he work")) {
         
         reply = "💼 Sami's Experience:\n\n" +
                 "• AI Intern (4+ months)\n" +
@@ -62,88 +92,70 @@ function askAI() {
                 "• Currently working on Fine-tuning LLMs";
     }
     
-    // ==================== LEARNING / NEXT STEPS ====================
+    // ==================== LEARNING ====================
     else if (q.includes("learn") || q.includes("next") || q.includes("future") || q.includes("plan") ||
              q.includes("studying") || q.includes("improve") || q.includes("upcoming") ||
-             q.includes("what should he learn") || q.includes("goal") || q.includes("target")) {
+             q.includes("what should he learn") || q.includes("goal")) {
         
-        reply = "📚 Sami's Learning Path (Current & Next):\n\n" +
+        reply = "📚 Sami's Learning Path:\n\n" +
                 "✅ Already Mastered: RAG, AI Agents, Chatbots, Deployment\n" +
                 "🔜 Currently Learning: Fine-tuning LLMs (Unsloth, LoRA)\n" +
                 "🔜 Next: Advanced RAG, Backend Integration (Node.js/Flask)\n" +
                 "🔜 Future: MLOps, Vector Databases Optimization";
     }
     
-    // ==================== DARS-E-NIZAMI / ISLAMIC STUDIES ====================
+    // ==================== ISLAMIC STUDIES ====================
     else if (q.includes("dars") || q.includes("nizami") || q.includes("islam") || q.includes("quran") ||
-             q.includes("religious") || q.includes("madrasa") || q.includes("alim") ||
-             q.includes("studies") && q.includes("islamic")) {
+             q.includes("religious") || q.includes("madrasa") || q.includes("alim")) {
         
         reply = "🕌 Sami's Islamic Studies:\n\n" +
                 "• Student of Dars-e-Nizami (Traditional Islamic Sciences)\n" +
                 "• Balancing Islamic education with AI engineering\n" +
-                "• Bringing ethics & values into technology\n" +
-                "• Unique combination: Deen + Dunya";
+                "• Bringing ethics & values into technology";
     }
     
-    // ==================== NAME / INTRODUCTION ====================
-    else if (q.includes("name") || q.includes("who") || q.includes("introduce") || q.includes("about") ||
-             q.includes("tell me") || q.includes("sami") && q.length < 15) {
+    // ==================== NAME ====================
+    else if (q.includes("name") || q.includes("who") || q.includes("introduce") || q.includes("about")) {
         
-        reply = "🧑‍💻 This is Sami — AI Engineer, Dars-e-Nizami student, and tech enthusiast.\n\n" +
+        reply = "🧑‍💻 This is Sami — AI Engineer, Dars-e-Nizami student.\n\n" +
                 "From heartbreak to hard work. Built 6 AI projects in 4 months.\n" +
-                "Currently learning Fine-tuning LLMs. Ask me anything about his skills, projects, or journey!";
+                "Ask me about skills, projects, earning potential, or achievements!";
     }
     
-    // ==================== CONTACT / SOCIAL ====================
+    // ==================== CONTACT ====================
     else if (q.includes("contact") || q.includes("email") || q.includes("reach") || q.includes("hire") ||
-             q.includes("linkedin") || q.includes("github") || q.includes("social")) {
+             q.includes("linkedin") || q.includes("github")) {
         
         reply = "📫 Connect with Sami:\n\n" +
                 "• GitHub: github.com/samimuhajir666-cmd\n" +
                 "• Email: samimuhajir666@gmail.com\n" +
-                "• Portfolio: sami-ai-portfolio.netlify.app\n\n" +
+                "• Portfolio: samiai.netlify.app\n\n" +
                 "Open for AI internships and junior AI engineer roles!";
     }
     
-    // ==================== ACHIEVEMENTS / JOURNEY ====================
-    else if (q.includes("achievement") || q.includes("journey") || q.includes("success") ||
-             q.includes("how long") || q.includes("started") || q.includes("background") ||
-             q.includes("story")) {
+    // ==================== JOURNEY ====================
+    else if (q.includes("journey") || q.includes("story") || q.includes("how long") || q.includes("started")) {
         
         reply = "🏆 Sami's Journey:\n\n" +
                 "• Started from zero — 4 months ago\n" +
-                "• Learned ML, RAG, AI Agents, Chatbots from scratch\n" +
+                "• Learned RAG, AI Agents, Chatbots from scratch\n" +
                 "• Built 6 complete AI projects\n" +
-                "• Completed 4+ months AI internship\n" +
-                "• From heartbreak to hard work — transformed life through skills\n\n" +
-                "⭐ Currently: Learning Fine-tuning LLMs";
+                "• From heartbreak to hard work — transformed life through skills";
     }
     
-    // ==================== MOTIVATION / ADVICE ====================
-    else if (q.includes("motivation") || q.includes("advice") || q.includes("inspire") ||
-             q.includes("message") || q.includes("suggest")) {
-        
-        reply = "💪 Sami's Message:\n\n" +
-                "\"From heartbreak to hard work. Agar main seekh sakta hoon, to aap bhi seekh sakte ho. Consistency over intensity.\"\n\n" +
-                "Advice: Start small, code daily (even 30 mins), and never copy-paste — type everything yourself.";
-    }
-    
-    // ==================== DEFAULT (catch-all) ====================
+    // ==================== DEFAULT ====================
     else {
         reply = "💡 I can tell you about:\n\n" +
-                "• 🔧 Skills — Python, LangChain, RAG, AI Agents, etc.\n" +
+                "• 🔧 Skills — Python, LangChain, RAG, AI Agents\n" +
                 "• 🚀 Projects — 6 completed AI projects\n" +
                 "• 💼 Experience — 4+ months AI internship\n" +
+                "• 💰 Earnings — Salary & freelance potential (NEW!)\n" +
+                "• 🏆 Achievements — What he did with all this (NEW!)\n" +
                 "• 📚 Learning — Fine-tuning LLMs\n" +
-                "• 🕌 Islamic Studies — Dars-e-Nizami student\n" +
-                "• 🧑‍💻 Name & Background\n" +
-                "• 📫 Contact info\n" +
-                "• 🏆 Achievements & Journey\n\n" +
-                "Try asking: 'What can Sami do?' or 'Tell me about his projects'";
+                "• 🕌 Islamic Studies — Dars-e-Nizami\n\n" +
+                "Try: 'what he can earn' or 'is ny ye sab kark kia kara'";
     }
     
-    // Display with typing effect (optional)
     answerDiv.style.opacity = "0";
     answerDiv.innerText = reply;
     setTimeout(() => { answerDiv.style.opacity = "1"; }, 50);
