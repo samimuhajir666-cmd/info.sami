@@ -331,3 +331,33 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+.project-card {
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    background: rgba(79,157,166,0.15);
+}
+
+.project-btn {
+    margin-top: 15px;
+    background: transparent;
+    border: 1px solid #4f9da6;
+    color: #4f9da6;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.project-btn:hover {
+    background: #4f9da6;
+    color: white;
+}
+
+.skill-card {
+    cursor: pointer;
+}
