@@ -399,3 +399,38 @@ footer {
     line-height: 1.6;
     color: #b0b8d4;
 }
+.project-item {
+    background: rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 25px;
+    transition: all 0.3s;
+}
+
+.project-item h3 {
+    margin: 0 0 15px 0;
+    color: #4f9da6;
+}
+
+.project-info-btn {
+    background: transparent;
+    border: 1px solid #4f9da6;
+    color: #4f9da6;
+    padding: 8px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.project-info-btn:hover {
+    background: #4f9da6;
+    color: white;
+}
+
+.project-info-box {
+    margin-top: 20px;
+    padding: 15px;
+    background: #0a0f1c;
+    border-left: 3px solid #4f9da6;
+    border-radius: 8px;
+    white-space: pre-line;
+    color: #b0b8d4;
+}
