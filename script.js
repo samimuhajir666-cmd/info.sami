@@ -212,3 +212,125 @@ function askAI() {
         <div class="skill-card" onclick="askAboutSkill('Groq API')">⚡ Groq API</div>
     </div>
 </section>
+
+// Function to show all project names when heading is clicked
+function showAllProjects() {
+    let container = document.getElementById("projectsList");
+    
+    if (container.style.display === "none") {
+        // Show projects
+        container.style.display = "grid";
+        container.innerHTML = `
+            <div class="project-item" id="proj_al_shifa">
+                <h3>🏥 Al Shifa Healthcare</h3>
+                <button class="project-info-btn" onclick="showProjectInfo('al_shifa')">📖 About this project</button>
+                <div id="info_al_shifa" class="project-info-box" style="display: none;"></div>
+            </div>
+            
+            <div class="project-item" id="proj_siddique">
+                <h3>🏢 Siddique Brothers</h3>
+                <button class="project-info-btn" onclick="showProjectInfo('siddique')">📖 About this project</button>
+                <div id="info_siddique" class="project-info-box" style="display: none;"></div>
+            </div>
+            
+            <div class="project-item" id="proj_rag">
+                <h3>📄 RAG Document Q&A</h3>
+                <button class="project-info-btn" onclick="showProjectInfo('rag')">📖 About this project</button>
+                <div id="info_rag" class="project-info-box" style="display: none;"></div>
+            </div>
+            
+            <div class="project-item" id="proj_agent">
+                <h3>🧠 AI Agent with Tools</h3>
+                <button class="project-info-btn" onclick="showProjectInfo('agent')">📖 About this project</button>
+                <div id="info_agent" class="project-info-box" style="display: none;"></div>
+            </div>
+            
+            <div class="project-item" id="proj_urdu">
+                <h3>🗣️ Urdu Bilingual Bot</h3>
+                <button class="project-info-btn" onclick="showProjectInfo('urdu')">📖 About this project</button>
+                <div id="info_urdu" class="project-info-box" style="display: none;"></div>
+            </div>
+            
+            <div class="project-item" id="proj_sirat">
+                <h3>🕌 Sirat-e-Mustaqeem AI Agent</h3>
+                <button class="project-info-btn" onclick="showProjectInfo('sirat')">📖 About this project</button>
+                <div id="info_sirat" class="project-info-box" style="display: none;"></div>
+            </div>
+        `;
+    } else {
+        // Hide projects
+        container.style.display = "none";
+        container.innerHTML = "";
+    }
+}
+
+// Function to show project information when button is clicked
+function showProjectInfo(projectId) {
+    let infoDiv = document.getElementById(`info_${projectId}`);
+    let allInfoDivs = document.querySelectorAll('.project-info-box');
+    
+    // Hide all other info boxes
+    allInfoDivs.forEach(div => {
+        if (div.id !== `info_${projectId}`) {
+            div.style.display = "none";
+        }
+    });
+    
+    // Toggle current info box
+    if (infoDiv.style.display === "none") {
+        let details = "";
+        
+        switch(projectId) {
+            case 'al_shifa':
+                details = "🏥 **Al Shifa Healthcare Chatbot**\n\n" +
+                          "🔧 **Tech:** RAG, LangChain, Groq API, ChromaDB\n\n" +
+                          "✨ **Features:** Medical queries, appointment guidance, medicine info\n\n" +
+                          "📅 **Timeline:** 2 weeks\n\n" +
+                          "🎯 **Impact:** 500+ queries handled";
+                break;
+            case 'siddique':
+                details = "🏢 **Siddique Brothers Chatbot**\n\n" +
+                          "🔧 **Tech:** AI Agents, LangGraph, Groq API\n\n" +
+                          "✨ **Features:** Product inquiry, order tracking, customer support\n\n" +
+                          "📅 **Timeline:** 10 days\n\n" +
+                          "🎯 **Impact:** 70% faster responses";
+                break;
+            case 'rag':
+                details = "📄 **RAG Document Q&A**\n\n" +
+                          "🔧 **Tech:** LangChain, ChromaDB, Groq API\n\n" +
+                          "✨ **Features:** Upload PDF/TXT, ask questions, get answers\n\n" +
+                          "📅 **Timeline:** 1 week\n\n" +
+                          "🎯 **Impact:** 95% accuracy";
+                break;
+            case 'agent':
+                details = "🧠 **AI Agent with Tools**\n\n" +
+                          "🔧 **Tech:** LangGraph, Groq API\n\n" +
+                          "✨ **Features:** Web search, calculator, multi-step reasoning\n\n" +
+                          "📅 **Timeline:** 5 days\n\n" +
+                          "🎯 **Impact:** Solves complex queries";
+                break;
+            case 'urdu':
+                details = "🗣️ **Urdu Bilingual Bot**\n\n" +
+                          "🔧 **Tech:** Python, Groq API\n\n" +
+                          "✨ **Features:** Roman Urdu, translation, local context\n\n" +
+                          "📅 **Timeline:** 4 days\n\n" +
+                          "🎯 **Impact:** Accessible for Urdu users";
+                break;
+            case 'sirat':
+                details = "🕌 **Sirat-e-Mustaqeem AI Agent**\n\n" +
+                          "🔧 **Tech:** Python, Speech Recognition, Groq API\n\n" +
+                          "✨ **Features:** Voice-enabled, halal ideas, haram warnings\n\n" +
+                          "📅 **Timeline:** 1 week\n\n" +
+                          "🎯 **Impact:** Unique deen + duniya project";
+                break;
+            default:
+                details = "Project details coming soon.";
+        }
+        
+        infoDiv.innerText = details;
+        infoDiv.style.display = "block";
+        infoDiv.style.whiteSpace = "pre-line";
+    } else {
+        infoDiv.style.display = "none";
+    }
+}
