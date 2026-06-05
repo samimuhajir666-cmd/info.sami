@@ -1,336 +1,67 @@
+// Simple working AI function
 function askAI() {
     let question = document.getElementById("question").value;
     let answerDiv = document.getElementById("answer");
     
     if (!question.trim()) {
-        answerDiv.innerText = "💬 Ask me anything about Sami — skills, projects, experience, earning potential, or achievements.";
+        answerDiv.innerText = "Ask me something about Sami!";
         return;
     }
     
     let q = question.toLowerCase();
     let reply = "";
     
-    // ==================== EARNING POTENTIAL (NEW) ====================
-    if (q.includes("earn") || q.includes("salary") || q.includes("money") || q.includes("income") ||
-        q.includes("paid") || q.includes("rate") || q.includes("how much") || q.includes("kama") ||
-        q.includes("kitna") || q.includes("pesa") || q.includes("worth")) {
-        
-        reply = "💰 Sami's Earning Potential:\n\n" +
-                "• AI Intern (current): Market rate ₹15k-25k/month\n" +
-                "• Junior AI Engineer (next role): ₹30k-50k/month\n" +
-                "• Freelance AI Projects: ₹20k-80k per project\n" +
-                "• Full-time AI Engineer (1 year exp): ₹4-8 LPA\n\n" +
-                "⭐ Skills that pay: RAG, AI Agents, Chatbots, LLM Integration\n" +
-                "🔥 Sami is open for remote AI roles and freelance work!";
+    if (q.includes("skill") || q.includes("know") || q.includes("python")) {
+        reply = "✅ Sami knows: Python, LangChain, RAG, AI Agents, Chatbots, HTML/CSS, JavaScript, Groq API";
     }
-    
-    // ==================== ACHIEVEMENTS / RESULTS (NEW) ====================
-    else if (q.includes("kar kia") || q.includes("results") || q.includes("achieved") || 
-             q.includes("accomplished") || q.includes("kia kara") || q.includes("kya hasil") ||
-             q.includes("what did he achieve") || q.includes("outcome") || q.includes("success") ||
-             q.includes("itna sab kark") || q.includes("kya banaya") || q.includes("delivered")) {
-        
-        reply = "🏆 What Sami Achieved After All This:\n\n" +
-                "✅ 6 Complete AI Projects (Real clients + Personal)\n" +
-                "✅ 4+ Months AI Internship Experience\n" +
-                "✅ Built Production-Ready Chatbots (Al Shifa, Siddique Brothers)\n" +
-                "✅ Mastered RAG, AI Agents, LangChain, Groq API\n" +
-                "✅ Deployed Live Portfolio: samiai.netlify.app\n" +
-                "✅ From Zero to AI Engineer — in just 4 months!\n\n" +
-                "🎯 Current Goal: Fine-tuning LLMs & Landing Junior AI Engineer Role\n" +
-                "💡 Next: Earning ₹4-8 LPA within 1 year";
+    else if (q.includes("project")) {
+        reply = "🚀 Sami built 6 projects: AI Career Advisor, Al Shifa Healthcare, Siddique Brothers, RAG Q&A, AI Agent, Urdu Bot, and Sirat-e-Mustaqeem.";
     }
-    
-    // ==================== SKILLS ====================
-    else if (q.includes("skill") || q.includes("know") || q.includes("can") || q.includes("able") || 
-        q.includes("python") || q.includes("langchain") || q.includes("rag") || q.includes("agent") ||
-        q.includes("chatbot") || q.includes("html") || q.includes("css") || q.includes("javascript") ||
-        q.includes("groq") || q.includes("numpy") || q.includes("pandas") || q.includes("node") ||
-        q.includes("technology") || q.includes("tech stack") || q.includes("framework")) {
-        
-        reply = "✅ Sami's Technical Skills:\n\n" +
-                "🐍 Python | LangChain | LangGraph\n" +
-                "📚 RAG (Retrieval Augmented Generation)\n" +
-                "🤖 AI Agents with Tools\n" +
-                "💬 Chatbots Development (5+ bots)\n" +
-                "🌐 HTML5, CSS3, JavaScript\n" +
-                "⚡ Groq API | OpenAI API\n" +
-                "📊 NumPy | Pandas\n" +
-                "🟢 Node.js\n" +
-                "🎨 Streamlit | Flask\n" +
-                "🗄️ ChromaDB (Vector Database)";
+    else if (q.includes("experience") || q.includes("intern")) {
+        reply = "💼 Sami has 4+ months AI internship experience, building real-world LLM applications.";
     }
-    
-    // ==================== PROJECTS ====================
-    else if (q.includes("project") || q.includes("build") || q.includes("made") || q.includes("create") ||
-             q.includes("developed") || q.includes("portfolio") || q.includes("what did he make") ||
-             q.includes("showcase") || q.includes("bot") || q.includes("al shifa") || 
-             q.includes("siddique") || q.includes("urdu") || q.includes("healthcare") || 
-             q.includes("career advisor") || q.includes("agent")) {
-        
-        reply = "🚀 Sami's Projects (6 complete):\n\n" +
-                "1. 🤖 AI Career Advisor — Live on this website!\n" +
-                "2. 🏥 Al Shifa Healthcare Chatbot — Medical queries & appointments\n" +
-                "3. 🏢 Siddique Brothers (SB Group) — Business inquiry & customer support\n" +
-                "4. 📄 RAG Document Q&A — Upload documents, get answers\n" +
-                "5. 🧠 AI Agent with Tools — Web search + calculator\n" +
-                "6. 🗣️ Urdu Bilingual Bot — Urdu/English hybrid chatbot\n\n" +
-                "🔗 All projects on GitHub: github.com/samimuhajir666-cmd";
+    else if (q.includes("learn")) {
+        reply = "📚 Sami is currently learning Fine-tuning LLMs, Advanced RAG, and Backend Integration.";
     }
-    
-    // ==================== EXPERIENCE ====================
-    else if (q.includes("experience") || q.includes("intern") || q.includes("job") || q.includes("company") ||
-             q.includes("worked") || q.includes("professional") || q.includes("career") ||
-             q.includes("where did he work")) {
-        
-        reply = "💼 Sami's Experience:\n\n" +
-                "• AI Intern (4+ months)\n" +
-                "• Built 5+ production-ready chatbots\n" +
-                "• Implemented RAG pipelines for real clients\n" +
-                "• Created AI agents with LangGraph\n" +
-                "• Deployed multiple projects on Streamlit & Netlify\n" +
-                "• Currently working on Fine-tuning LLMs";
+    else if (q.includes("name")) {
+        reply = "🧑‍💻 This is Sami — AI Engineer and Dars-e-Nizami student.";
     }
-    
-    // ==================== LEARNING ====================
-    else if (q.includes("learn") || q.includes("next") || q.includes("future") || q.includes("plan") ||
-             q.includes("studying") || q.includes("improve") || q.includes("upcoming") ||
-             q.includes("what should he learn") || q.includes("goal")) {
-        
-        reply = "📚 Sami's Learning Path:\n\n" +
-                "✅ Already Mastered: RAG, AI Agents, Chatbots, Deployment\n" +
-                "🔜 Currently Learning: Fine-tuning LLMs (Unsloth, LoRA)\n" +
-                "🔜 Next: Advanced RAG, Backend Integration (Node.js/Flask)\n" +
-                "🔜 Future: MLOps, Vector Databases Optimization";
-    }
-    
-    // ==================== ISLAMIC STUDIES ====================
-    else if (q.includes("dars") || q.includes("nizami") || q.includes("islam") || q.includes("quran") ||
-             q.includes("religious") || q.includes("madrasa") || q.includes("alim")) {
-        
-        reply = "🕌 Sami's Islamic Studies:\n\n" +
-                "• Student of Dars-e-Nizami (Traditional Islamic Sciences)\n" +
-                "• Balancing Islamic education with AI engineering\n" +
-                "• Bringing ethics & values into technology";
-    }
-    
-    // ==================== NAME ====================
-    else if (q.includes("name") || q.includes("who") || q.includes("introduce") || q.includes("about")) {
-        
-        reply = "🧑‍💻 This is Sami — AI Engineer, Dars-e-Nizami student.\n\n" +
-                "From heartbreak to hard work. Built 6 AI projects in 4 months.\n" +
-                "Ask me about skills, projects, earning potential, or achievements!";
-    }
-    
-    // ==================== CONTACT ====================
-    else if (q.includes("contact") || q.includes("email") || q.includes("reach") || q.includes("hire") ||
-             q.includes("linkedin") || q.includes("github")) {
-        
-        reply = "📫 Connect with Sami:\n\n" +
-                "• GitHub: github.com/samimuhajir666-cmd\n" +
-                "• Email: samimuhajir666@gmail.com\n" +
-                "• Portfolio: samiai.netlify.app\n\n" +
-                "Open for AI internships and junior AI engineer roles!";
-    }
-    
-    // ==================== JOURNEY ====================
-    else if (q.includes("journey") || q.includes("story") || q.includes("how long") || q.includes("started")) {
-        
-        reply = "🏆 Sami's Journey:\n\n" +
-                "• Started from zero — 4 months ago\n" +
-                "• Learned RAG, AI Agents, Chatbots from scratch\n" +
-                "• Built 6 complete AI projects\n" +
-                "• From heartbreak to hard work — transformed life through skills";
-    }
-    
-    // ==================== DEFAULT ====================
     else {
-        reply = "💡 I can tell you about:\n\n" +
-                "• 🔧 Skills — Python, LangChain, RAG, AI Agents\n" +
-                "• 🚀 Projects — 6 completed AI projects\n" +
-                "• 💼 Experience — 4+ months AI internship\n" +
-                "• 💰 Earnings — Salary & freelance potential (NEW!)\n" +
-                "• 🏆 Achievements — What he did with all this (NEW!)\n" +
-                "• 📚 Learning — Fine-tuning LLMs\n" +
-                "• 🕌 Islamic Studies — Dars-e-Nizami\n\n" +
-                "Try: 'what he can earn' or 'is ny ye sab kark kia kara'";
+        reply = "💡 Ask about: skills, projects, experience, learning, or name.";
     }
     
-   <!-- Projects Section -->
-<section id="projects" class="projects">
-    <h2 class="section-title">🚀 Featured Projects</h2>
-    <div class="projects-grid">
-        
-        <div class="project-card" onclick="askAboutProject('Al Shifa Healthcare')">
-            <h3>🏥 Al Shifa Healthcare</h3>
-            <p>Medical chatbot for appointments and health queries</p>
-            <button class="project-btn">Ask about this project →</button>
-        </div>
-        
-        <div class="project-card" onclick="askAboutProject('Siddique Brothers')">
-            <h3>🏢 Siddique Brothers</h3>
-            <p>Business inquiry and customer support chatbot</p>
-            <button class="project-btn">Ask about this project →</button>
-        </div>
-        
-        <div class="project-card" onclick="askAboutProject('RAG Document Q&A')">
-            <h3>📄 RAG Document Q&A</h3>
-            <p>Upload documents and get AI-powered answers</p>
-            <button class="project-btn">Ask about this project →</button>
-        </div>
-        
-        <div class="project-card" onclick="askAboutProject('AI Agent with Tools')">
-            <h3>🧠 AI Agent with Tools</h3>
-            <p>Web search + calculator integrated AI agent</p>
-            <button class="project-btn">Ask about this project →</button>
-        </div>
-        
-        <div class="project-card" onclick="askAboutProject('Urdu Bilingual Bot')">
-            <h3>🗣️ Urdu Bilingual Bot</h3>
-            <p>Urdu/English hybrid chatbot</p>
-            <button class="project-btn">Ask about this project →</button>
-        </div>
-        
-        <div class="project-card" onclick="askAboutProject('Sirat-e-Mustaqeem AI Agent')">
-            <h3>🕌 Sirat-e-Mustaqeem AI Agent</h3>
-            <p>Voice-enabled halal career guidance + haram warnings</p>
-            <button class="project-btn">Ask about this project →</button>
-        </div>
-        
-    </div>
-</section>
+    answerDiv.innerText = reply;
+}
 
-<!-- Skills ka clickable section bhi add karo -->
-<section class="skills-clickable">
-    <h2 class="section-title">💡 Click on any skill to learn more</h2>
-    <div class="skills-grid">
-        <div class="skill-card" onclick="askAboutSkill('Python')">🐍 Python</div>
-        <div class="skill-card" onclick="askAboutSkill('LangChain')">🦜 LangChain</div>
-        <div class="skill-card" onclick="askAboutSkill('RAG')">📚 RAG</div>
-        <div class="skill-card" onclick="askAboutSkill('AI Agents')">🤖 AI Agents</div>
-        <div class="skill-card" onclick="askAboutSkill('Chatbots')">💬 Chatbots</div>
-        <div class="skill-card" onclick="askAboutSkill('Groq API')">⚡ Groq API</div>
-    </div>
-</section>
-
-// Function to show all project names when heading is clicked
+// Project functions
 function showAllProjects() {
     let container = document.getElementById("projectsList");
-    
     if (container.style.display === "none") {
-        // Show projects
         container.style.display = "grid";
         container.innerHTML = `
-            <div class="project-item" id="proj_al_shifa">
-                <h3>🏥 Al Shifa Healthcare</h3>
-                <button class="project-info-btn" onclick="showProjectInfo('al_shifa')">📖 About this project</button>
-                <div id="info_al_shifa" class="project-info-box" style="display: none;"></div>
-            </div>
-            
-            <div class="project-item" id="proj_siddique">
-                <h3>🏢 Siddique Brothers</h3>
-                <button class="project-info-btn" onclick="showProjectInfo('siddique')">📖 About this project</button>
-                <div id="info_siddique" class="project-info-box" style="display: none;"></div>
-            </div>
-            
-            <div class="project-item" id="proj_rag">
-                <h3>📄 RAG Document Q&A</h3>
-                <button class="project-info-btn" onclick="showProjectInfo('rag')">📖 About this project</button>
-                <div id="info_rag" class="project-info-box" style="display: none;"></div>
-            </div>
-            
-            <div class="project-item" id="proj_agent">
-                <h3>🧠 AI Agent with Tools</h3>
-                <button class="project-info-btn" onclick="showProjectInfo('agent')">📖 About this project</button>
-                <div id="info_agent" class="project-info-box" style="display: none;"></div>
-            </div>
-            
-            <div class="project-item" id="proj_urdu">
-                <h3>🗣️ Urdu Bilingual Bot</h3>
-                <button class="project-info-btn" onclick="showProjectInfo('urdu')">📖 About this project</button>
-                <div id="info_urdu" class="project-info-box" style="display: none;"></div>
-            </div>
-            
-            <div class="project-item" id="proj_sirat">
-                <h3>🕌 Sirat-e-Mustaqeem AI Agent</h3>
-                <button class="project-info-btn" onclick="showProjectInfo('sirat')">📖 About this project</button>
-                <div id="info_sirat" class="project-info-box" style="display: none;"></div>
-            </div>
+            <div class="project-item"><h3>🏥 Al Shifa Healthcare</h3><button onclick="showProjectInfo('al_shifa')">About</button><div id="info_al_shifa" style="display:none"></div></div>
+            <div class="project-item"><h3>🏢 Siddique Brothers</h3><button onclick="showProjectInfo('siddique')">About</button><div id="info_siddique" style="display:none"></div></div>
+            <div class="project-item"><h3>📄 RAG Document Q&A</h3><button onclick="showProjectInfo('rag')">About</button><div id="info_rag" style="display:none"></div></div>
+            <div class="project-item"><h3>🧠 AI Agent with Tools</h3><button onclick="showProjectInfo('agent')">About</button><div id="info_agent" style="display:none"></div></div>
+            <div class="project-item"><h3>🗣️ Urdu Bilingual Bot</h3><button onclick="showProjectInfo('urdu')">About</button><div id="info_urdu" style="display:none"></div></div>
+            <div class="project-item"><h3>🕌 Sirat-e-Mustaqeem</h3><button onclick="showProjectInfo('sirat')">About</button><div id="info_sirat" style="display:none"></div></div>
         `;
     } else {
-        // Hide projects
         container.style.display = "none";
         container.innerHTML = "";
     }
 }
 
-// Function to show project information when button is clicked
 function showProjectInfo(projectId) {
     let infoDiv = document.getElementById(`info_${projectId}`);
-    let allInfoDivs = document.querySelectorAll('.project-info-box');
-    
-    // Hide all other info boxes
-    allInfoDivs.forEach(div => {
-        if (div.id !== `info_${projectId}`) {
-            div.style.display = "none";
-        }
-    });
-    
-    // Toggle current info box
-    if (infoDiv.style.display === "none") {
-        let details = "";
-        
-        switch(projectId) {
-            case 'al_shifa':
-                details = "🏥 **Al Shifa Healthcare Chatbot**\n\n" +
-                          "🔧 **Tech:** RAG, LangChain, Groq API, ChromaDB\n\n" +
-                          "✨ **Features:** Medical queries, appointment guidance, medicine info\n\n" +
-                          "📅 **Timeline:** 2 weeks\n\n" +
-                          "🎯 **Impact:** 500+ queries handled";
-                break;
-            case 'siddique':
-                details = "🏢 **Siddique Brothers Chatbot**\n\n" +
-                          "🔧 **Tech:** AI Agents, LangGraph, Groq API\n\n" +
-                          "✨ **Features:** Product inquiry, order tracking, customer support\n\n" +
-                          "📅 **Timeline:** 10 days\n\n" +
-                          "🎯 **Impact:** 70% faster responses";
-                break;
-            case 'rag':
-                details = "📄 **RAG Document Q&A**\n\n" +
-                          "🔧 **Tech:** LangChain, ChromaDB, Groq API\n\n" +
-                          "✨ **Features:** Upload PDF/TXT, ask questions, get answers\n\n" +
-                          "📅 **Timeline:** 1 week\n\n" +
-                          "🎯 **Impact:** 95% accuracy";
-                break;
-            case 'agent':
-                details = "🧠 **AI Agent with Tools**\n\n" +
-                          "🔧 **Tech:** LangGraph, Groq API\n\n" +
-                          "✨ **Features:** Web search, calculator, multi-step reasoning\n\n" +
-                          "📅 **Timeline:** 5 days\n\n" +
-                          "🎯 **Impact:** Solves complex queries";
-                break;
-            case 'urdu':
-                details = "🗣️ **Urdu Bilingual Bot**\n\n" +
-                          "🔧 **Tech:** Python, Groq API\n\n" +
-                          "✨ **Features:** Roman Urdu, translation, local context\n\n" +
-                          "📅 **Timeline:** 4 days\n\n" +
-                          "🎯 **Impact:** Accessible for Urdu users";
-                break;
-            case 'sirat':
-                details = "🕌 **Sirat-e-Mustaqeem AI Agent**\n\n" +
-                          "🔧 **Tech:** Python, Speech Recognition, Groq API\n\n" +
-                          "✨ **Features:** Voice-enabled, halal ideas, haram warnings\n\n" +
-                          "📅 **Timeline:** 1 week\n\n" +
-                          "🎯 **Impact:** Unique deen + duniya project";
-                break;
-            default:
-                details = "Project details coming soon.";
-        }
-        
-        infoDiv.innerText = details;
-        infoDiv.style.display = "block";
-        infoDiv.style.whiteSpace = "pre-line";
-    } else {
-        infoDiv.style.display = "none";
-    }
+    let details = {
+        al_shifa: "Tech: RAG, LangChain, Groq API. Features: Medical queries, appointments.",
+        siddique: "Tech: AI Agents, LangGraph. Features: Product inquiry, order tracking.",
+        rag: "Tech: LangChain, ChromaDB. Features: Upload docs, ask questions.",
+        agent: "Tech: LangGraph, Groq API. Features: Web search, calculator.",
+        urdu: "Tech: Python, Groq API. Features: Roman Urdu, translation.",
+        sirat: "Tech: Speech Recognition, Groq API. Features: Voice, halal/haram filter."
+    };
+    infoDiv.innerText = details[projectId];
+    infoDiv.style.display = infoDiv.style.display === "none" ? "block" : "none";
 }
