@@ -156,7 +156,59 @@ function askAI() {
                 "Try: 'what he can earn' or 'is ny ye sab kark kia kara'";
     }
     
-    answerDiv.style.opacity = "0";
-    answerDiv.innerText = reply;
-    setTimeout(() => { answerDiv.style.opacity = "1"; }, 50);
-}
+   <!-- Projects Section -->
+<section id="projects" class="projects">
+    <h2 class="section-title">🚀 Featured Projects</h2>
+    <div class="projects-grid">
+        
+        <div class="project-card" onclick="askAboutProject('Al Shifa Healthcare')">
+            <h3>🏥 Al Shifa Healthcare</h3>
+            <p>Medical chatbot for appointments and health queries</p>
+            <button class="project-btn">Ask about this project →</button>
+        </div>
+        
+        <div class="project-card" onclick="askAboutProject('Siddique Brothers')">
+            <h3>🏢 Siddique Brothers</h3>
+            <p>Business inquiry and customer support chatbot</p>
+            <button class="project-btn">Ask about this project →</button>
+        </div>
+        
+        <div class="project-card" onclick="askAboutProject('RAG Document Q&A')">
+            <h3>📄 RAG Document Q&A</h3>
+            <p>Upload documents and get AI-powered answers</p>
+            <button class="project-btn">Ask about this project →</button>
+        </div>
+        
+        <div class="project-card" onclick="askAboutProject('AI Agent with Tools')">
+            <h3>🧠 AI Agent with Tools</h3>
+            <p>Web search + calculator integrated AI agent</p>
+            <button class="project-btn">Ask about this project →</button>
+        </div>
+        
+        <div class="project-card" onclick="askAboutProject('Urdu Bilingual Bot')">
+            <h3>🗣️ Urdu Bilingual Bot</h3>
+            <p>Urdu/English hybrid chatbot</p>
+            <button class="project-btn">Ask about this project →</button>
+        </div>
+        
+        <div class="project-card" onclick="askAboutProject('Sirat-e-Mustaqeem AI Agent')">
+            <h3>🕌 Sirat-e-Mustaqeem AI Agent</h3>
+            <p>Voice-enabled halal career guidance + haram warnings</p>
+            <button class="project-btn">Ask about this project →</button>
+        </div>
+        
+    </div>
+</section>
+
+<!-- Skills ka clickable section bhi add karo -->
+<section class="skills-clickable">
+    <h2 class="section-title">💡 Click on any skill to learn more</h2>
+    <div class="skills-grid">
+        <div class="skill-card" onclick="askAboutSkill('Python')">🐍 Python</div>
+        <div class="skill-card" onclick="askAboutSkill('LangChain')">🦜 LangChain</div>
+        <div class="skill-card" onclick="askAboutSkill('RAG')">📚 RAG</div>
+        <div class="skill-card" onclick="askAboutSkill('AI Agents')">🤖 AI Agents</div>
+        <div class="skill-card" onclick="askAboutSkill('Chatbots')">💬 Chatbots</div>
+        <div class="skill-card" onclick="askAboutSkill('Groq API')">⚡ Groq API</div>
+    </div>
+</section>
